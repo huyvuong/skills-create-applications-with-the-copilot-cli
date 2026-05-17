@@ -36,4 +36,23 @@ function div(a, b) {
   return a / b
 }
 
-module.exports = { add, sub, mul, div }
+function modulo(a, b) {
+  validateNumber(a)
+  validateNumber(b)
+  if (b === 0) throw new Error('division by zero')
+  return a % b
+}
+
+function power(base, exponent) {
+  validateNumber(base)
+  validateNumber(exponent)
+  return Math.pow(base, exponent)
+}
+
+function squareRoot(n) {
+  validateNumber(n)
+  if (n < 0) throw new Error('square root of negative number')
+  return Math.sqrt(n)
+}
+
+module.exports = { add, sub, mul, div, modulo, power, squareRoot }
